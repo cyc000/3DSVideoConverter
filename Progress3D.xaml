@@ -1,0 +1,29 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+       xmlns:local="clr-namespace:Xceed.Wpf.Toolkit"
+       WindowStartupLocation="Manual" WindowStyle="ToolWindow" Title="Progress" Height="184.63" Width="361.195">
+    <Grid Name="Base" Margin="0,0,20,0">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label Content="Left"  Margin="10,4,0,0"/>
+            <ProgressBar  x:Name="leftBar" Minimum="0" Maximum="100" Width="260" Margin="12,8,0,8"/>
+            <TextBlock Text="{Binding Value, ElementName=leftBar, StringFormat=\{0:0\}%}" VerticalAlignment="Center" Margin="-140,0,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Label Content="Right" Margin="10,4,0,0"/>
+            <ProgressBar x:Name="rightBar"  Minimum="0" Maximum="100" Width="260" Margin="2,8,0,8"/>
+            <TextBlock Text="{Binding Value, ElementName=rightBar, StringFormat=\{0:0\}%}" VerticalAlignment="Center" Margin="-140,0,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Label Content="Final" Margin="10,4,0,0" />
+            <ProgressBar x:Name="finalBar" Minimum="0" Maximum="100" Width="260" Margin="6,8,0,8"/>
+            <TextBlock Text="{Binding Value, ElementName=finalBar, StringFormat=\{0:0\}%}" VerticalAlignment="Center" Margin="-140,0,0,0"/>
+        </StackPanel>
+        <Button Grid.Row="3" x:Name="CancelBtn" Margin="144,6,124,5" RenderTransformOrigin="1.066,0.792">Cancel</Button>
+    </Grid>
+</Window>

@@ -1,0 +1,34 @@
+﻿<Window 
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+       Title="3DSVideoConverter" Height="308.464" Width="554.859">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="173*"></RowDefinition>
+            <RowDefinition Height="105*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="355*"></ColumnDefinition>
+            <ColumnDefinition Width="179*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="1" Margin="8,21,14,11">
+            <StackPanel Orientation="Horizontal" Height="27" >
+                <Button x:Name="ConvertBtn" Content="Convert" Margin="0,0,0,0" Width="56"/>
+                <Button Name="AboutBtn" Content="About" Margin="20,0,0,0" Width="52" />
+            </StackPanel>
+            <CheckBox x:Name="SideBySideCheckBox" IsChecked="True" Content="SBS (Side By Side)" Margin="10,15,4,20" Height="16" />
+            <StackPanel Orientation="Horizontal" Height="28" Margin="0,0,5,0">
+                <Label Content="Quality" Margin="0,-2,0,2"/>
+                <ComboBox Name="Quality">
+                    <ComboBoxItem Content="VeryHigh (2)"/>
+                    <ComboBoxItem Content="High (4)"/>
+                    <ComboBoxItem IsSelected="True" Content="Standard (6)"/>
+                    <ComboBoxItem Content="Low (8)"/>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+        <Label Grid.Row="0" Grid.Column="0" FontWeight="Bold" Foreground="Red" Margin="0,0,0,142">Drag and Drop a file to be converted</Label>
+        <ListBox Grid.Row="0" Grid.Column="0" Name="InputFile" AllowDrop="True" Margin="5,32,1,2"/>
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Name="fileInfo" Margin="7,5,4,5" ></TextBlock>
+    </Grid>
+</Window> 
